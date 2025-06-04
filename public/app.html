@@ -3,55 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">PRIVATE HOUSEHOLD BY 30RABS</title> 
+    <title id="pageTitle">PRIVATE HOUSEHOLD BY 30RABS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { 
-            font-family: 'Inter', sans-serif; 
+        body {
+            font-family: 'Inter', sans-serif;
         }
-        .email-item-dark-theme { 
+        .email-item-dark-theme {
             border: 1px solid #374151;
-            padding: 1rem; 
-            margin-bottom: 0.75rem; 
-            border-radius: 0.375rem; 
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            border-radius: 0.375rem;
             background-color: #1f2937;
         }
-        .email-item-dark-theme .email-body-processed { 
-            font-size: 0.875rem; 
+        .email-item-dark-theme .email-body-processed {
+            font-size: 0.875rem;
             color: #d1d5db;
-            white-space: pre-wrap; 
+            white-space: pre-wrap;
             overflow-wrap: break-word;
         }
-        .input-field-dark-theme { 
+        .input-field-dark-theme {
             border: 1px solid #4b5563;
             background-color: #374151;
             color: #f3f4f6;
-            padding: 0.5rem 0.75rem; 
-            border-radius: 0.375rem; 
-            width: 100%; 
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            width: 100%;
         }
         .input-field-dark-theme::placeholder {
             color: #9ca3af;
         }
-        .btn-primary-theme { 
+        .btn-primary-theme {
             background-color: #2563eb;
-            color: white; 
-            display: inline-flex; 
+            color: white;
+            display: inline-flex;
             align-items: center;
-            justify-content: center; 
-            min-height: 2.5rem; 
+            justify-content: center;
+            min-height: 2.5rem;
         }
-        .btn-primary-theme:hover { 
+        .btn-primary-theme:hover {
             background-color: #1d4ed8;
         }
-        .btn-primary-theme:disabled { 
-            background-color: #374151; 
-            color: #9ca3af; 
+        .btn-primary-theme:disabled {
+            background-color: #374151;
+            color: #9ca3af;
             cursor: not-allowed;
         }
-        .btn-link-action-theme { 
-            margin-top: 0.75rem; 
+        .btn-link-action-theme {
+            margin-top: 0.75rem;
             padding: 0.5rem 1rem;
             background-color: #3b82f6;
             color: white;
@@ -61,25 +61,25 @@
         .btn-link-action-theme:hover {
             background-color: #2563eb;
         }
-        .found-text-dark-theme { 
-            font-weight: 600; 
+        .found-text-dark-theme {
+            font-weight: 600;
             color: #34d399;
-            margin-bottom: 0.5rem; 
+            margin-bottom: 0.5rem;
         }
-        .btn { 
-            padding: 0.625rem 1.25rem; 
-            border-radius: 0.375rem; 
-            font-weight: 500; 
-            cursor: pointer; 
-            display: inline-block; 
-            text-decoration: none; 
+        .btn {
+            padding: 0.625rem 1.25rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
             transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
         }
-        .loading-spinner { 
+        .loading-spinner {
             border: 2px solid rgba(255,255,255,0.3);
             border-top-color: white;
             border-radius: 50%;
-            width: 1rem; 
+            width: 1rem;
             height: 1rem;
             animation: spin 0.8s linear infinite;
         }
@@ -88,21 +88,21 @@
         }
         .lang-button {
             padding: 0.25rem 0.5rem;
-            border: 1px solid #4b5563; 
+            border: 1px solid #4b5563;
             border-radius: 0.25rem;
-            font-size: 0.75rem; 
+            font-size: 0.75rem;
             cursor: pointer;
             margin-left: 0.5rem;
-            background-color: #1f2937; 
-            color: #d1d5db; 
+            background-color: #1f2937;
+            color: #d1d5db;
         }
         .lang-button.active {
-            background-color: #3b82f6; 
+            background-color: #3b82f6;
             color: white;
             border-color: #3b82f6;
         }
         .lang-button:not(.active):hover {
-            background-color: #374151; 
+            background-color: #374151;
         }
     </style>
 </head>
@@ -119,7 +119,7 @@
                 Select <strong class="font-semibold text-red-500">"Watch Temporarily"</strong> or <strong class="font-semibold text-red-500">"I'm Travelling"</strong> in mobile/tv app. After selecting, click on send email to proceed and get the code.
             </p>
         </header>
-        
+
         <div id="userSection">
             <div class="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
                 <div>
@@ -146,8 +146,8 @@
     <script>
         const searchRecipientInput = document.getElementById('searchRecipient');
         const searchButton = document.getElementById('searchButton');
-        const buttonText = document.getElementById('buttonText'); 
-        const loadingSpinnerContainer = document.getElementById('loadingSpinnerContainer'); 
+        const buttonText = document.getElementById('buttonText');
+        const loadingSpinnerContainer = document.getElementById('loadingSpinnerContainer');
         const emailListDiv = document.getElementById('emailList');
 
         const pageTitleEl = document.getElementById('pageTitle');
@@ -168,9 +168,10 @@
                 alertRecipientNeeded: "Please enter the recipient email!",
                 errorFetch: "Failed to fetch emails",
                 errorProcessing: "Error fetching or processing emails:",
-                noEmailMatchSubject: "No email found matching the subject criteria (case-insensitive) for this recipient.",
+                noEmailMatchSubject: "No email found matching the subject criteria (case-insensitive) for this recipient.", // Teks ini tidak lagi digunakan secara langsung untuk notifikasi utama, tapi bisa berguna untuk referensi
+                noEmailFound: "No email found!", // Notifikasi baru
                 foundText: "Found!",
-                linkNotFoundAfterPhrase: "(Link not found after phrase for button ", 
+                linkNotFoundAfterPhrase: "(Link not found after phrase for button ",
                 specificInfoNotFound: "(Specific information {phrasesForMsg} not found in this email body.)",
                 btnKlikDisini: "Click Here",
                 btnGetCodeHere: "Get Code Here",
@@ -186,7 +187,8 @@
                 alertRecipientNeeded: "Email Penerima harus diisi!",
                 errorFetch: "Gagal mengambil email",
                 errorProcessing: "Error mengambil atau memproses email:",
-                noEmailMatchSubject: "Tidak ditemukan email yang cocok dengan kriteria subjek (case-insensitive) untuk penerima ini.",
+                noEmailMatchSubject: "Tidak ditemukan email yang cocok dengan kriteria subjek (case-insensitive) untuk penerima ini.", // Teks ini tidak lagi digunakan secara langsung untuk notifikasi utama, tapi bisa berguna untuk referensi
+                noEmailFound: "Tidak ada email ditemukan!", // Notifikasi baru
                 foundText: "Ditemukan!",
                 linkNotFoundAfterPhrase: "(Tautan tidak ditemukan setelah frasa untuk tombol ",
                 specificInfoNotFound: "(Informasi spesifik {phrasesForMsg} tidak ditemukan dalam isi email ini.)",
@@ -196,23 +198,23 @@
             }
         };
 
-        let currentLang = 'en'; 
+        let currentLang = 'en';
 
         function setLanguage(lang) {
             if (!translations[lang]) return;
             currentLang = lang;
-            document.documentElement.lang = lang; 
+            document.documentElement.lang = lang;
 
             pageTitleEl.textContent = translations[lang].pageTitle;
-            subHeaderTextEl.innerHTML = translations[lang].subHeaderText; 
+            subHeaderTextEl.innerHTML = translations[lang].subHeaderText;
             searchRecipientInput.placeholder = translations[lang].searchInputPlaceholder;
-            
+
             if (!searchButton.disabled) {
                  buttonText.textContent = translations[lang].searchButtonText;
             }
-            
-            const currentPlaceholder = emailListDiv.querySelector('#emailListPlaceholder') || 
-                                     (emailListDiv.firstElementChild && emailListDiv.firstElementChild.tagName === 'P' && 
+
+            const currentPlaceholder = emailListDiv.querySelector('#emailListPlaceholder') ||
+                                     (emailListDiv.firstElementChild && emailListDiv.firstElementChild.tagName === 'P' &&
                                      (emailListDiv.firstElementChild.textContent.includes("Please enter an email") || emailListDiv.firstElementChild.textContent.includes("Silakan masukkan email")) ? emailListDiv.firstElementChild : null);
 
             if (currentPlaceholder) {
@@ -251,10 +253,10 @@
             }
 
             searchButton.disabled = true;
-            buttonText.classList.add('hidden'); 
-            loadingSpinnerContainer.classList.remove('hidden'); 
+            buttonText.classList.add('hidden');
+            loadingSpinnerContainer.classList.remove('hidden');
             emailListDiv.innerHTML = `<p class="text-gray-400 italic text-xs sm:text-sm">${translations[currentLang].loadingDataText}</p>`;
-            
+
             try {
                 const response = await fetch(`/api/emails?recipient=${encodeURIComponent(recipient)}`);
                 if (!response.ok) {
@@ -267,45 +269,40 @@
                 let foundEmailForProcessing = null;
                 for (const email of emailsFromBackend) {
                     if (!email.subject || !TARGET_SUBJECTS_LOWERCASE.includes(email.subject.toLowerCase())) {
-                        continue; 
+                        continue;
                     }
                     foundEmailForProcessing = email;
-                    break; 
+                    break;
                 }
                 if (foundEmailForProcessing) {
                     displayProcessedEmailBody(foundEmailForProcessing);
                 } else {
-                    const subjectStrings = TARGET_SUBJECTS_LOWERCASE.map(s => {
-                        let readableSubject = s.charAt(0).toUpperCase() + s.slice(1);
-                        readableSubject = readableSubject.replace("important: how to update your netflix household", "Important: How to update your Netflix Household")
-                                                       .replace("your netflix temporary access code", "Your Netflix temporary access code");
-                        return `"${readableSubject}"`;
-                    }).join(` ${translations[currentLang].orText || "or"} `);
-                    emailListDiv.innerHTML = `<p class="text-gray-400 italic text-xs sm:text-sm text-center">No email found matching the subject criteria (${subjectStrings}, case-insensitive) for this recipient.</p>`;
+                    // Menggunakan notifikasi baru dari objek translations
+                    emailListDiv.innerHTML = `<p class="text-gray-400 italic text-xs sm:text-sm text-center">${translations[currentLang].noEmailFound}</p>`;
                 }
             } catch (error) {
                 console.error('Error fetching or processing emails:', error);
                 emailListDiv.innerHTML = `<p class="text-yellow-400 font-semibold italic text-xs sm:text-sm text-center">${translations[currentLang].errorProcessing} ${error.message}</p>`;
             } finally {
                 searchButton.disabled = false;
-                buttonText.textContent = translations[currentLang].searchButtonText; 
-                buttonText.classList.remove('hidden'); 
-                loadingSpinnerContainer.classList.add('hidden'); 
+                buttonText.textContent = translations[currentLang].searchButtonText;
+                buttonText.classList.remove('hidden');
+                loadingSpinnerContainer.classList.add('hidden');
             }
         };
 
         searchRecipientInput.addEventListener('keypress', function(event) {
             if (event.key === 'Enter' || event.keyCode === 13) {
-                event.preventDefault(); 
-                performSearch(); 
+                event.preventDefault();
+                performSearch();
             }
         });
         searchButton.addEventListener('click', performSearch);
 
         function findLinkAndCreateButton(textPortionAfterPhrase, buttonTextKey, parentElement) {
-            const urlRegex = /(https?:\/\/[^\s"'<>(){}\[\]\\]+)/; 
+            const urlRegex = /(https?:\/\/[^\s"'<>(){}\[\]\\]+)/;
             const match = textPortionAfterPhrase.match(urlRegex);
-            const buttonLabel = translations[currentLang][buttonTextKey] || "View Link"; 
+            const buttonLabel = translations[currentLang][buttonTextKey] || "View Link";
 
             if (match && match[0]) {
                 const link = match[0];
@@ -324,34 +321,34 @@
         }
 
         function displayProcessedEmailBody(email) {
-            emailListDiv.innerHTML = ''; 
+            emailListDiv.innerHTML = '';
             // console.log("Full body email yang dipilih untuk diproses:", JSON.stringify(email.body, null, 2));
-            
+
             const emailElement = document.createElement('div');
             emailElement.classList.add('email-item-dark-theme');
 
             const bodyDisplayElement = document.createElement('div');
-            bodyDisplayElement.classList.add('email-body-processed', 'text-center'); 
+            bodyDisplayElement.classList.add('email-body-processed', 'text-center');
 
             const bodyText = email.body || "";
-            const bodyTextLowercase = bodyText.toLowerCase(); 
+            const bodyTextLowercase = bodyText.toLowerCase();
             let phraseProcessed = false;
 
-            for (const rule of BODY_EXTRACTION_RULES_BASE) { 
-                const phraseLc = rule.phrase.toLowerCase(); 
-                const searchTextIndex = bodyTextLowercase.indexOf(phraseLc); 
+            for (const rule of BODY_EXTRACTION_RULES_BASE) {
+                const phraseLc = rule.phrase.toLowerCase();
+                const searchTextIndex = bodyTextLowercase.indexOf(phraseLc);
 
                 if (searchTextIndex !== -1) {
                     const foundElement = document.createElement('p');
-                    foundElement.classList.add('found-text-dark-theme', 'text-sm', 'sm:text-base'); 
-                    foundElement.textContent = translations[currentLang].foundText; 
+                    foundElement.classList.add('found-text-dark-theme', 'text-sm', 'sm:text-base');
+                    foundElement.textContent = translations[currentLang].foundText;
                     bodyDisplayElement.appendChild(foundElement);
 
                     const substringAfterPhrase = bodyText.substring(searchTextIndex + rule.phrase.length);
                     findLinkAndCreateButton(substringAfterPhrase, rule.key, bodyDisplayElement);
-                    
+
                     phraseProcessed = true;
-                    break; 
+                    break;
                 }
             }
 
@@ -360,16 +357,16 @@
                 let msg = translations[currentLang].specificInfoNotFound.replace("{phrasesForMsg}", phrasesForMsg);
                 bodyDisplayElement.innerHTML = `<p class="text-gray-400 italic text-xs sm:text-sm">${msg}</p>`;
             }
-            
+
             emailElement.appendChild(bodyDisplayElement);
             emailListDiv.appendChild(emailElement);
         }
-        
+
         const preferredLang = localStorage.getItem('preferredLang');
         if (preferredLang) {
             setLanguage(preferredLang);
         } else {
-            setLanguage('en'); 
+            setLanguage('en');
         }
         document.getElementById('userSection').classList.remove('hidden');
 
